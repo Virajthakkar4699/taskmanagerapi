@@ -6,6 +6,10 @@ const auth = require("../middleware/auth");
 const User = require("../models/users");
 const { sendWelcomeEmail, senddeletemail } = require("../emails/accounts");
 
+router.get("/test", (req, res) => {
+  res.status(200).send("It works");
+});
+
 router.post("/users", async (req, res) => {
   // console.log("testing");
   const user = new User(req.body);
